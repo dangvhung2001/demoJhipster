@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20240108081242"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "cart",
+  "fields": [
+    {
+      "fieldName": "amountOfCartNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfCartGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfShipmentNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfShipmentGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfOrderNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfOrderGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Cart",
+  "relationships": [
+    {
+      "otherEntityName": "shipmentCart",
+      "otherEntityRelationshipName": "cart",
+      "relationshipName": "shipmentCart",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "cartItem",
+      "otherEntityRelationshipName": "cart",
+      "relationshipName": "cartItem",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

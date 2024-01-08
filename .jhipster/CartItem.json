@@ -1,0 +1,63 @@
+{
+  "annotations": {
+    "changelogDate": "20240108081342"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "cart_item",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "priceNet",
+      "fieldType": "Float",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "1000000",
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "vat",
+      "fieldType": "Float",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "100",
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "priceGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "totalPriceNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "totalPriceGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "name": "CartItem",
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cart",
+      "otherEntityRelationshipName": "cartItem",
+      "relationshipName": "cart",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

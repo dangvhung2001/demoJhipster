@@ -1,0 +1,140 @@
+entity Cart {
+    amountOfCartNet Float ,
+    amountOfCartGross Float ,
+    amountOfShipmentNet Float ,
+    amountOfShipmentGross Float ,
+    amountOfOrderNet Float ,
+    amountOfOrderGross Float ,
+    quantity Integer
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+entity CartItem {
+    quantity Integer,
+    priceNet Float  min(0) max(1000000),
+    vat Float  min(0) max(100),
+    priceGross Float,
+    totalPriceNet Float,
+    totalPriceGross Float,
+    description TextBlob,
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+enum ProductCategoryEnum {
+    Aloes,
+    Vitamins,
+    Minerals,
+    Probiotics,
+    Collagen
+}
+
+enum OrderMainStatusEnum {
+    WaitingForBankTransfer,
+    PreparationForShipping,
+    Sent,
+    Delivered,
+    Canceled
+}
+
+entity OrderMain {
+    buyerLogin String,
+    buyerFirstName String,
+    buyerLastName String,
+    buyerEmail String,
+    buyerPhone String,
+    amountOfCartNet Float,
+    amountOfCartGross Float,
+    amountOfShipmentNet Float,
+    amountOfShipmentGross Float,
+    amountOfOrderNet Float,
+    amountOfOrderGross Float,
+    orderMainStatus OrderMainStatusEnum,
+    createTime Instant,
+    updateTime Instant
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+enum PaymentStatusEnum {
+    WaitingForBankTransfer,
+    PreparationForShipping
+}
+
+entity Payment {
+    name String  minlength(0) maxlength(1000),
+    priceNet Float  min(0) max(10000),
+    vat Float  min(0) max(100),
+    priceGross Float,
+    PaymentStatusEnum PaymentStatusEnum ,
+    createTime Instant,
+    updateTime Instant
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+entity PaymentCart {
+    name String ,
+    priceNet Float ,
+    vat Float ,
+    priceGross Float ,
+    PaymentStatusEnum PaymentStatusEnum
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+entity Product {
+    productCategoryEnum ProductCategoryEnum ,
+    name String  minlength(0) maxlength(5000),
+    quantity Integer,
+    priceNet Float  min(0) max(1000000),
+    vat Float  min(0) max(100),
+    priceGross Float,
+    stock Integer  min(0) max(1000000),
+    description TextBlob
+    createTime Instant,
+    updateTime Instant,
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+entity ShipmentCart {
+    firstName String  maxlength(500),
+    lastName String  maxlength(500),
+    street String  maxlength(500),
+    postalCode String  maxlength(20),
+    city String  maxlength(500),
+    country String  maxlength(500),
+    phoneToTheReceiver String  maxlength(30),
+    firm String maxlength(10000),
+    taxNumber String maxlength(50)
+}
+
+service all with serviceImpl
+dto * with mapstruct
+
+relationship OneToMany {
+    Cart{cartItem} to CartItem{cart}
+    OrderMain{cart} to Cart
+}
+
+relationship OneToOne {
+    Cart {payment} to PaymentCart {cart},
+    Cart {shipmentCart} to ShipmentCart {cart},
+    Cart{user(login)} to User with builtInEntity
+}
+
+relationship ManyToOne {
+    CartItem{product} to Product
+    OrderMain{user(login)} to User with builtInEntity
+}
+paginate Product with pagination
+
+

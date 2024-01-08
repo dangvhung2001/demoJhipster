@@ -1,0 +1,11 @@
+id;quantity;price_net;vat;price_gross;total_price_net;total_price_gross;description
+1;15734;963444.86;45.77;12493.49;9042.77;5872.35;../fake-data/blob/hipster.txt
+2;2036;4611.4;52.52;4732.27;21110.26;2546.07;../fake-data/blob/hipster.txt
+3;9212;146297.39;6.98;3281.65;14759.31;14915.78;../fake-data/blob/hipster.txt
+4;6152;794716.78;53.16;23831.8;1496.77;13470.05;../fake-data/blob/hipster.txt
+5;25826;808348.79;75.87;31394.7;30474.49;15899.92;../fake-data/blob/hipster.txt
+6;9603;341673.15;99.66;24457.16;21611.42;11893.73;../fake-data/blob/hipster.txt
+7;8792;25938.17;46.21;8120.92;31481.11;32717.89;../fake-data/blob/hipster.txt
+8;15555;755720.19;74.05;12578.48;25098;13854.78;../fake-data/blob/hipster.txt
+9;13470;201083.92;77.5;18430;10146.6;10721.14;../fake-data/blob/hipster.txt
+10;16486;223280.26;12.19;5856.77;23077.01;613.07;../fake-data/blob/hipster.txt

@@ -1,0 +1,11 @@
+id;product_category_enum;name;quantity;price_net;vat;price_gross;stock;description;create_time;update_time
+1;Minerals;inside pish boom;7240;216112.16;68.37;437.6;772170;../fake-data/blob/hipster.txt;2024-01-07T23:44:57;2024-01-08T08:10:28
+2;Vitamins;versus vacantly likewise;21472;789890.35;85.71;14619.44;950855;../fake-data/blob/hipster.txt;2024-01-08T04:02:35;2024-01-08T07:53:32
+3;Vitamins;dramatic;7625;908986.61;47.08;2500;806583;../fake-data/blob/hipster.txt;2024-01-07T18:14:46;2024-01-07T17:30:51
+4;Aloes;sheepishly hmph disambiguate;21469;323974.2;19.65;9695.53;397036;../fake-data/blob/hipster.txt;2024-01-08T05:24:45;2024-01-07T10:54:17
+5;Probiotics;oh for;24189;536082.7;84.78;21410.05;811645;../fake-data/blob/hipster.txt;2024-01-07T21:55:52;2024-01-07T22:21:52
+6;Probiotics;scarify;14922;217044.35;2.98;19520.15;97366;../fake-data/blob/hipster.txt;2024-01-07T09:53:02;2024-01-07T20:48:29
+7;Minerals;unto and zowie;7074;309080.07;15.01;6331.35;640413;../fake-data/blob/hipster.txt;2024-01-07T22:58:05;2024-01-07T23:47:42
+8;Probiotics;without indeed;6142;857369.96;67.45;26160.89;83209;../fake-data/blob/hipster.txt;2024-01-07T21:33:49;2024-01-07T18:54:23
+9;Probiotics;mmm education;22281;7421.84;58.8;8904;335618;../fake-data/blob/hipster.txt;2024-01-08T00:58:13;2024-01-08T00:50:20
+10;Minerals;whoa;27570;208238.15;34.35;885.35;715706;../fake-data/blob/hipster.txt;2024-01-08T03:15:52;2024-01-07T12:09:42

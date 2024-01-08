@@ -1,0 +1,39 @@
+{
+  "testShopApp": {
+    "orderMain": {
+      "home": {
+        "title": "Order Mains",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Order Main",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Order Main",
+        "notFound": "No Order Mains found"
+      },
+      "created": "Một Order Main mới được tạo với định danh {{ param }}",
+      "updated": "Một Order Main cập nhật với định danh {{ param }}",
+      "deleted": "Một Order Main đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Order Main {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Main"
+      },
+      "id": "ID",
+      "buyerLogin": "Buyer Login",
+      "buyerFirstName": "Buyer First Name",
+      "buyerLastName": "Buyer Last Name",
+      "buyerEmail": "Buyer Email",
+      "buyerPhone": "Buyer Phone",
+      "amountOfCartNet": "Amount Of Cart Net",
+      "amountOfCartGross": "Amount Of Cart Gross",
+      "amountOfShipmentNet": "Amount Of Shipment Net",
+      "amountOfShipmentGross": "Amount Of Shipment Gross",
+      "amountOfOrderNet": "Amount Of Order Net",
+      "amountOfOrderGross": "Amount Of Order Gross",
+      "orderMainStatus": "Order Main Status",
+      "createTime": "Create Time",
+      "updateTime": "Update Time",
+      "cart": "Cart",
+      "user": "User"
+    }
+  }
+}

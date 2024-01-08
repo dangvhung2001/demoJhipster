@@ -2,8 +2,10 @@ package com.mycompany.myapp.service;
 
 import com.mycompany.myapp.config.Constants;
 import com.mycompany.myapp.domain.Authority;
+import com.mycompany.myapp.domain.Cart;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.repository.AuthorityRepository;
+import com.mycompany.myapp.repository.CartRepository;
 import com.mycompany.myapp.repository.UserRepository;
 import com.mycompany.myapp.security.AuthoritiesConstants;
 import com.mycompany.myapp.security.SecurityUtils;
@@ -38,10 +40,18 @@ public class UserService {
 
     private final AuthorityRepository authorityRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository) {
+    private final CartRepository cartRepository;
+
+    public UserService(
+        UserRepository userRepository,
+        PasswordEncoder passwordEncoder,
+        AuthorityRepository authorityRepository,
+        CartRepository cartRepository
+    ) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
+        this.cartRepository = cartRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -118,6 +128,9 @@ public class UserService {
         authorityRepository.findById(AuthoritiesConstants.USER).ifPresent(authorities::add);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
+        Cart newCart = new Cart();
+        newCart.setUser(newUser);
+        cartRepository.save(newCart);
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
@@ -161,6 +174,9 @@ public class UserService {
             user.setAuthorities(authorities);
         }
         userRepository.save(user);
+        Cart newCart = new Cart();
+        newCart.setUser(user);
+        cartRepository.save(newCart);
         log.debug("Created Information for User: {}", user);
         return user;
     }

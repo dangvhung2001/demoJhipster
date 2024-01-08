@@ -1,0 +1,69 @@
+entity Blog {
+    name String required minlength(3)
+    handle String required
+    image ImageBlob required
+}
+entity Post {
+    title String required
+    content String required
+    date Instant required
+}
+
+entity Tag {
+    name String required minlength(2)
+}
+
+relationship ManyToOne {
+    Blog{user(login)} to User with builtInEntity
+    Post{blog(name)} to Blog
+}
+
+relationship ManyToMany{
+    Post{tag(name)} to Tag{post}
+}
+
+paginate Post, Tag with infinite-scroll
+
+enum OrderStatus {
+    PENDING
+    CONFIRMED
+    COMPLETED
+    CANCELED
+}
+
+entity Product {
+    name String required
+    price BigDecimal required
+    total Integer required
+    image ImageBlob required
+}
+
+entity Cart {
+    total BigDecimal required
+}
+
+entity CartItem {
+    quantity Integer required
+}
+
+entity Order {
+    date LocalDate required
+    status OrderStatus required
+    total BigDecimal required
+}
+
+relationship OneToMany {
+    Cart{cartItem} to CartItem{cart}
+    Order{cart} to Cart
+}
+
+relationship ManyToOne {
+    CartItem{product} to Product
+    Order{user(login)} to User with builtInEntity
+}
+
+relationship OneToOne{
+    Cart{user(login)} to User with builtInEntity
+}
+
+paginate Cart, CartItem, Product with pagination

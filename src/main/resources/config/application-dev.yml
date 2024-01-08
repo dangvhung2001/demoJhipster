@@ -34,7 +34,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/testShop?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: hung123456789
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -47,10 +47,19 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+            required: 'true'
+          auth: 'true'
+        transport:
+          protocol: smtp
+    username: danghung25072001@gmail.com
+    host: smtp.gmail.com
+    password: kroxctwkiprzlqqj
+    port: '587'
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

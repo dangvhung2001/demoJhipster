@@ -1,0 +1,12 @@
+{
+  "testShopApp": {
+    "ProductCategoryEnum": {
+      "null": "",
+      "Aloes": "Aloes",
+      "Vitamins": "Vitamins",
+      "Minerals": "Minerals",
+      "Probiotics": "Probiotics",
+      "Collagen": "Collagen"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "testShopApp": {
+    "shipmentCart": {
+      "home": {
+        "title": "Shipment Carts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Shipment Cart",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Shipment Cart",
+        "notFound": "No Shipment Carts found"
+      },
+      "created": "Một Shipment Cart mới được tạo với định danh {{ param }}",
+      "updated": "Một Shipment Cart cập nhật với định danh {{ param }}",
+      "deleted": "Một Shipment Cart đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Shipment Cart {{ id }}?"
+      },
+      "detail": {
+        "title": "Shipment Cart"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "street": "Street",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "country": "Country",
+      "phoneToTheReceiver": "Phone To The Receiver",
+      "firm": "Firm",
+      "taxNumber": "Tax Number",
+      "cart": "Cart"
+    }
+  }
+}

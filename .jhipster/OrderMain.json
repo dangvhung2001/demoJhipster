@@ -1,0 +1,86 @@
+{
+  "annotations": {
+    "changelogDate": "20240108081442"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "order_main",
+  "fields": [
+    {
+      "fieldName": "buyerLogin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buyerFirstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buyerLastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buyerEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buyerPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountOfCartNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfCartGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfShipmentNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfShipmentGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfOrderNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "amountOfOrderGross",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "orderMainStatus",
+      "fieldType": "OrderMainStatusEnum",
+      "fieldValues": "WaitingForBankTransfer,PreparationForShipping,Sent,Delivered,Canceled"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "OrderMain",
+  "relationships": [
+    {
+      "otherEntityName": "cart",
+      "relationshipName": "cart",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
